@@ -39,8 +39,32 @@
 # (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
 # https://docs.kedro.org/en/stable/data/data_catalog.html
 
+
+
 heart_data_raw:
   type: pandas.CSVDataset
   filepath: data/01_raw/heart_statlog_cleveland_hungary_final.csv
 
+output_dataframe_after_duplicates_removal:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/output_dataframe_after_duplicates_removal.csv
 
+output_dataframe_after_zero_bp_removal:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/output_dataframe_after_zero_bp_removal.csv
+
+output_dataframe_after_zero_cholesterol_removal:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/output_dataframe_after_zero_cholesterol_removal.csv
+
+output_dataframe_after_max_hr_outliers_removal:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/output_dataframe_after_max_hr_outliers_removal.csv
+
+output_dataframe_after_age_binning:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/output_dataframe_after_age_binning.csv
+
+preprocessed_data:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/preprocessed_data.csv

@@ -1,28 +1,44 @@
-from kedro.pipeline import Pipeline, node, pipeline
-
-from .nodes import create_model_input_table, preprocess_companies, preprocess_shuttles
-
+from kedro.pipeline import Pipeline, node
+from .nodes import remove_duplicates, remove_zero_bp, remove_zero_cholesterol, max_heart_rate_outliers, bin_age, bin_cholesterol
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline(
+    return Pipeline(
         [
             node(
-                func=preprocess_companies,
-                inputs="companies",
-                outputs="preprocessed_companies",
-                name="preprocess_companies_node",
+                func=remove_duplicates,
+                inputs="heart_data_raw",
+                outputs="output_dataframe_after_duplicates_removal",
+                name="remove_duplicates_node"
             ),
             node(
-                func=preprocess_shuttles,
-                inputs="shuttles",
-                outputs="preprocessed_shuttles",
-                name="preprocess_shuttles_node",
+                func=remove_zero_bp,
+                inputs="output_dataframe_after_duplicates_removal",
+                outputs="output_dataframe_after_zero_bp_removal",
+                name="remove_zero_bp_node"
             ),
             node(
-                func=create_model_input_table,
-                inputs=["preprocessed_shuttles", "preprocessed_companies", "reviews"],
-                outputs="model_input_table",
-                name="create_model_input_table_node",
+                func=remove_zero_cholesterol,
+                inputs="output_dataframe_after_zero_bp_removal",
+                outputs="output_dataframe_after_zero_cholesterol_removal",
+                name="remove_zero_cholesterol_node"
+            ),
+            node(
+                func=max_heart_rate_outliers,
+                inputs="output_dataframe_after_zero_cholesterol_removal",
+                outputs="output_dataframe_after_max_hr_outliers_removal",
+                name="max_heart_rate_outliers_node"
+            ),
+            node(
+                func=bin_age,
+                inputs="output_dataframe_after_max_hr_outliers_removal",
+                outputs="output_dataframe_after_age_binning",
+                name="bin_age_node"
+            ),
+            node(
+                func=bin_cholesterol,
+                inputs="output_dataframe_after_age_binning",
+                outputs="preprocessed_data",
+                name="bin_cholesterol_node"
             ),
         ]
     )
