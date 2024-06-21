@@ -5,7 +5,7 @@ from typing import Dict
 
 from mlops_project.pipelines import (
     data_processing as dp,
-    feature_extraction_alignment as fea,
+    feature_extraction_alignment as fea, train_test_split as tts 
 )
 
 def register_pipelines() -> Dict[str, Pipeline]:
