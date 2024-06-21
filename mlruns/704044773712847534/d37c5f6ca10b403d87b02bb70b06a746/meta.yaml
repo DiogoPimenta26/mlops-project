@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/diogo/OneDrive/Ambiente%20de%20Trabalho/mlops-project/mlruns/704044773712847534/d37c5f6ca10b403d87b02bb70b06a746/artifacts
+end_time: 1718985176660
+entry_point_name: ''
+experiment_id: '704044773712847534'
+lifecycle_stage: active
+run_id: d37c5f6ca10b403d87b02bb70b06a746
+run_name: feature_extraction_alignment
+run_uuid: d37c5f6ca10b403d87b02bb70b06a746
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718985176310
+status: 4
+tags: []
+user_id: diogo

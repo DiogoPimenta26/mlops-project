@@ -1,0 +1,1 @@
+['age_0-40', 'age_41-50', 'age_51-60', 'chest pain type_2', 'chest pain type_3', 'chest pain type_4', 'resting ecg_1', 'resting ecg_2', 'ST slope_2', 'ST slope_3', 'cholesterol_high', 'cholesterol_normal', 'cholesterol_borderline high', 'resting bp s', 'fasting blood sugar', 'max heart rate', 'exercise angina', 'oldpeak', 'target']

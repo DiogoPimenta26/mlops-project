@@ -68,3 +68,13 @@ output_dataframe_after_age_binning:
 preprocessed_data:
   type: pandas.CSVDataset
   filepath: data/03_primary/preprocessed_data.csv
+
+features:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/features.csv
+
+aligned_features:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/aligned_features.csv
+
+
