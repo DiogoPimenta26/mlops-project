@@ -16,8 +16,10 @@ def register_pipelines() -> Dict[str, Pipeline]:
     """
     data_processing_pipeline = dp.create_pipeline()
     feature_extraction_alignment_pipeline = fea.create_pipeline()
+    train_test_split_pipeline = tts.create_pipeline()
 
     return {
         "data_processing": data_processing_pipeline,
         "feature_extraction_alignment": feature_extraction_alignment_pipeline,
+        "tts": train_test_split_pipeline
     }
