@@ -8,7 +8,8 @@ from mlops_project.pipelines import (
     feature_extraction_alignment as fea,
     train_test_split as tts ,
     data_unit_tests as dut,
-    dut_after_extraction as dut_ae
+    dut_after_extraction as dut_ae, feature_selection_pipeline as fs
+
 )
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -22,6 +23,8 @@ def register_pipelines() -> Dict[str, Pipeline]:
     train_test_split_pipeline = tts.create_pipeline()
     data_unit_tests_pipeline = dut.create_pipeline()
     dut_after_extraction_pipeline = dut_ae.create_pipeline()
+    feature_selection_pipeline = fs.create_pipeline()
+
 
     
 
@@ -30,5 +33,6 @@ def register_pipelines() -> Dict[str, Pipeline]:
         "feature_extraction_alignment": feature_extraction_alignment_pipeline,
         "tts": train_test_split_pipeline,
         "data_unit_tests": data_unit_tests_pipeline,
-        "dut_after_extraction": dut_after_extraction_pipeline
+        "dut_after_extraction": dut_after_extraction_pipeline,
+        "feature_selection": feature_selection_pipeline
     }

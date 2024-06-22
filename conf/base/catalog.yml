@@ -96,3 +96,8 @@ y_test:
   type: pandas.CSVDataset
   filepath: data/05_model_input/y_test.csv
   
+selected_features:
+  type: pandas.CSVDataset
+  filepath: data/04_feature/selected_features.csv
+  save_args:
+    index: False
