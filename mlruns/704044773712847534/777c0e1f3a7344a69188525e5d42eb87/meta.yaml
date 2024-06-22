@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/diogo/OneDrive/Ambiente%20de%20Trabalho/mlops-project/mlruns/704044773712847534/777c0e1f3a7344a69188525e5d42eb87/artifacts
+end_time: 1719067123728
+entry_point_name: ''
+experiment_id: '704044773712847534'
+lifecycle_stage: active
+run_id: 777c0e1f3a7344a69188525e5d42eb87
+run_name: dut_after_extraction
+run_uuid: 777c0e1f3a7344a69188525e5d42eb87
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719067123512
+status: 3
+tags: []
+user_id: diogo

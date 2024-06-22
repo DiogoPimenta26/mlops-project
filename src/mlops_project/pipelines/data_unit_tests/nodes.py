@@ -67,3 +67,6 @@ def validate_data(data: pd.DataFrame) -> None:
     log.info("Data passed the unit tests")
 
     print("Data validation passed")
+
+
+

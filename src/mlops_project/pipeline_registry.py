@@ -5,7 +5,10 @@ from typing import Dict
 
 from mlops_project.pipelines import (
     data_processing as dp,
-    feature_extraction_alignment as fea, train_test_split as tts , data_unit_tests as data_unit_tests_pipeline
+    feature_extraction_alignment as fea,
+    train_test_split as tts ,
+    data_unit_tests as dut,
+    dut_after_extraction as dut_ae
 )
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -15,14 +18,17 @@ def register_pipelines() -> Dict[str, Pipeline]:
     A mapping from a pipeline name to a ``Pipeline`` object.
     """
     data_processing_pipeline = dp.create_pipeline()
-    
     feature_extraction_alignment_pipeline = fea.create_pipeline()
     train_test_split_pipeline = tts.create_pipeline()
+    data_unit_tests_pipeline = dut.create_pipeline()
+    dut_after_extraction_pipeline = dut_ae.create_pipeline()
+
     
 
     return {
-        "data_unit_tests": data_unit_tests_pipeline.create_pipeline(),
         "data_processing": data_processing_pipeline,
         "feature_extraction_alignment": feature_extraction_alignment_pipeline,
-        "tts": train_test_split_pipeline
+        "tts": train_test_split_pipeline,
+        "data_unit_tests": data_unit_tests_pipeline,
+        "dut_after_extraction": dut_after_extraction_pipeline
     }
